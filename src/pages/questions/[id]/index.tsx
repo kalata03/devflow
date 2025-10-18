@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Answer } from "@prisma/client";
+import { AnswerWithUser } from "@/types/prisma";
 import { useQueryClient, useMutation, useQuery } from "@tanstack/react-query"
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -130,7 +130,7 @@ export default function QuestionDetailsPage() {
   <div className="max-h-[300px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 rounded-lg border border-gray-200">
     {answers?.answers?.length ? (
       <div className="space-y-3 p-2">
-        {answers.answers.map((a: Answer) => (
+        {answers.answers.map((a: AnswerWithUser) => (
           <Card
             key={a.id}
             className="border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200"
@@ -138,8 +138,9 @@ export default function QuestionDetailsPage() {
             <CardContent className="p-4 text-sm text-gray-800">
               {a.content}
               <p className="text-xs text-gray-500 mt-2">
-                Posted {new Date(a.createdAt).toLocaleString()}
-              </p>
+            💬 by <span className="font-medium">{a.user?.firstName} {a.user?.lastName}</span> ·{" "}
+            {new Date(a.createdAt).toLocaleString()}
+          </p>
             </CardContent>
           </Card>
         ))}
