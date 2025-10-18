@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import Link from "next/link";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -73,9 +74,9 @@ export default function RegisterPage() {
 
         <p className="text-sm text-gray-600 text-center">
           Already have an account?{" "}
-          <a href="/auth/login" className="text-blue-600 hover:underline">
-            Sign in
-          </a>
+          <Link href="/auth/login" className="text-blue-600 hover:underline">
+            Login
+          </Link>
         </p>
       </div>
     </main>

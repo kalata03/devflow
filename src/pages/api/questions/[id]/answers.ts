@@ -2,7 +2,6 @@ import { prisma } from "@/lib/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
 import { verifyToken } from "@/lib/auth";
 import { JwtPayload } from "jsonwebtoken";
-import { Prisma } from "@prisma/client";
 import { AnswerWithUser } from "@/types/prisma";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

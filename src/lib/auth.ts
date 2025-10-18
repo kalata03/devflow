@@ -1,6 +1,7 @@
-import jwt from "jsonwebtoken";
+import jwt, { JwtPayload } from "jsonwebtoken";
+import { NextApiRequest } from "next";
 
-export function verifyToken(req: any) {
+export function verifyToken(req: NextApiRequest): JwtPayload | string | null {
   const token = req.cookies?.token;
 
   if (!token) return null;

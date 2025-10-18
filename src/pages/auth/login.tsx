@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import Link from "next/link";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -55,10 +56,10 @@ export default function LoginPage() {
         </form>
 
         <p className="text-sm text-gray-600 text-center">
-          Don’t have an account?{" "}
-          <a href="/auth/register" className="text-blue-600 hover:underline">
+          Don't have an account?{" "}
+          <Link href="/auth/register" className="text-blue-600 hover:underline">
             Register
-          </a>
+          </Link>
         </p>
       </div>
     </main>
