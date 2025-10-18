@@ -13,7 +13,7 @@ export default function Home() {
         <Link href="/questions">
           <Button size="lg">View Questions</Button>
         </Link>
-        <Link href="/auth/signin">
+        <Link href="/auth/login">
           <Button variant="outline" size="lg">
             Sign In
           </Button>
