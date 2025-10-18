@@ -73,9 +73,9 @@ export default function RegisterPage() {
         </form>
 
         <p className="text-sm text-gray-600 text-center">
-          Already have an account?{" "}
-          <Link href="/auth/login" className="text-blue-600 hover:underline">
-            Login
+          Don&apos;t have an account?{" "}
+          <Link href="/auth/register" className="text-blue-600 hover:underline">
+            Register
           </Link>
         </p>
       </div>
