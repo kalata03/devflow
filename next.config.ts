@@ -1,11 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Force use of Webpack instead of Turbopack
-  experimental: {
-    turbo: {
-      enabled: false,
-    },
-  },
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  // No need to disable turbopack in config
+  // Just don't use --turbopack flag in build script
 };
 
-module.exports = nextConfig;
+export default nextConfig;
